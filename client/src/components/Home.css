@@ -1,0 +1,118 @@
+:root {
+	--primary: #554121;
+	--secondary: #FEE58F;
+	--white: #fff;
+	--grey: #9b9b9b;
+}
+
+.customInput {
+	color: var(--white);
+  position: relative;
+	width: 94%;
+	z-index: 2;
+}
+
+.inputField {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--grey);
+  outline: 0;
+  font-size: 1.3rem;
+  color: var(--white);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+  
+.inputField::placeholder {
+	color: var(--grey);
+}
+  
+.inputField:placeholder-shown,
+.inputField .inputLabel
+{
+	color: var(--grey);
+	font-size: 1.3rem;
+	cursor: text;
+	top: 20px;
+}
+
+.inputLabel {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--grey);
+}
+
+.inputField:focus {
+  padding-bottom: 6px;  
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--primary), var(--secondary));
+  border-image-slice: 1;
+}
+
+.inputField:focus .inputLabel {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: var(--primary);
+	font-weight: 700;    
+}
+
+/* reset input */
+.inputField:required,
+.inputField:invalid
+{
+	box-shadow: none;
+}
+
+.customInput button
+{
+	margin-top: 5px;
+
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #937341;
+  
+  padding: 15px;
+  background: linear-gradient(180deg, #ecc572 0, #815500);
+  
+  cursor: pointer;
+  line-height: 1;
+  border: none;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.11);
+  transition: color 0.4s;
+  max-width: 100%;
+  
+	outline: none;
+	
+	border-radius: 6px;
+}
+
+.customInput button:before
+{
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  content: "";
+  display: block;
+  position: absolute;
+  background: #111;
+	z-index: -1;
+	
+	border-radius: 6px;
+}
+
+.customInput button:hover
+{
+  color: #c4b998;  
+}
