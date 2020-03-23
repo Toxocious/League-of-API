@@ -16,27 +16,6 @@ import './images/backgrounds/background.jpg';
 // Main App Class.
 export default class App extends Component
 {
-  // Construct our states.
-  constructor(props)
-  {
-    super(props);
-
-    this.state = {
-      apiResponse: false,
-    };
-  }
-
-  // Call to our node server.
-  FetchAPI()
-  {
-    fetch('http://localhost:9000/testAPI')
-      .then(res => res.text())
-      .then(res => this.setState({ 
-        apiResponse: res
-      }))
-      .catch(err => err);
-  }
-
   // Render our app here.
   render()
   {
