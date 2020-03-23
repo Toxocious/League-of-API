@@ -13,8 +13,8 @@ class Home extends Component
 		super(props);
 
 		this.state = {
-			region: 'NA',
-			summoner: 'Absol',
+			region: '',
+			summoner: '',
 		}
 	}
 
@@ -26,6 +26,14 @@ class Home extends Component
     this.setState({
 			summoner: summonerName,
     });
+	}
+
+	// Update the state of the summoner's region.
+	UpdateRegion = (e) =>
+	{
+		this.setState({
+			region: e.target.value
+		});
 	}
 
 	// Fetch the summoner's data from the node server.
@@ -46,21 +54,33 @@ class Home extends Component
 	{
 		return (
 			<div className='Home'>
-				<div className="customInput">
-					<input
-						onChange={ this.UpdateName }
-						placeholder='Summoner Name'
-						maxLength='16'
-						className='inputField'
-						type='text'
-						id='summonerName'
-					/>
-					<label
-						htmlFor='Summoner'
-						className='inputLabel'
-					/>
+				<div className='Panel'>
+					<div className='Body'>
+						<div className="customInput">
+							<select onChange={ this.UpdateRegion }>
+								<option value='NA'>NA</option>
+								<option value='EUW'>EUW</option>
+								<option value='EUNE'>EUNE</option>
+								<option value='JP'>JP</option>
+							</select>
 
-					<button onClick={ this.FetchSummoner }>Fetch Summoner</button>
+							<input
+								onChange={ this.UpdateName }
+								placeholder='Summoner Name'
+								maxLength='16'
+								className='inputField'
+								autoComplete="off"
+								type='text'
+								id='summonerName'
+							/>
+							<label
+								htmlFor='Summoner'
+								className='inputLabel'
+							/>
+
+							<button onClick={ this.FetchSummoner }>Fetch Summoner</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		)

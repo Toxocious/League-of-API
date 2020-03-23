@@ -5,24 +5,51 @@
 	--grey: #9b9b9b;
 }
 
+.Home
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .customInput {
 	color: var(--white);
   position: relative;
-	width: 94%;
+	width: 400px;
 	z-index: 2;
+}
+
+select {
+  font-family: inherit;
+  border: 0;
+  border-bottom: 1px solid var(--grey);
+  outline: 0;
+  font-size: 1.3rem;
+  color: var(--white);
+  padding: 6px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  text-align: center;
+}
+select option {
+  background: transparent;
+  color: var(--primary);
 }
 
 .inputField {
   font-family: inherit;
-  width: 100%;
+  width: 300px;
   border: 0;
-  border-bottom: 2px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
   outline: 0;
   font-size: 1.3rem;
   color: var(--white);
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
+  text-align: center;
 }
   
 .inputField::placeholder {
@@ -48,8 +75,8 @@
 }
 
 .inputField:focus {
-  padding-bottom: 6px;  
-  border-width: 3px;
+  padding-bottom: 7px;  
+  border-width: 1px;
   border-image: linear-gradient(to right, var(--primary), var(--secondary));
   border-image-slice: 1;
 }
@@ -69,50 +96,4 @@
 .inputField:invalid
 {
 	box-shadow: none;
-}
-
-.customInput button
-{
-	margin-top: 5px;
-
-  font-size: 1.3rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #937341;
-  
-  padding: 15px;
-  background: linear-gradient(180deg, #ecc572 0, #815500);
-  
-  cursor: pointer;
-  line-height: 1;
-  border: none;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.11);
-  transition: color 0.4s;
-  max-width: 100%;
-  
-	outline: none;
-	
-	border-radius: 6px;
-}
-
-.customInput button:before
-{
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
-  content: "";
-  display: block;
-  position: absolute;
-  background: #111;
-	z-index: -1;
-	
-	border-radius: 6px;
-}
-
-.customInput button:hover
-{
-  color: #c4b998;  
 }
